@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  generator:
+    build: .
+    container_name: yt_generator
+    env_file: .env
+    volumes:
+      - ./content:/app/content
+      - ./out:/app/out
+      - ./credentials:/app/credentials
+    restart: unless-stopped
